@@ -1,0 +1,40 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  annotations:
+    field.cattle.io/creatorId: user-crkpx
+    provisioning.cattle.io/management-cluster-display-name: rke2-down-c
+  finalizers:
+  - wrangler.cattle.io/cloud-config-secret-remover
+  - auth.cattle.io/capi-resources-cleanup
+  - wrangler.cattle.io/provisioning-cluster-remove
+  - wrangler.cattle.io/rke-cluster-remove
+  generation: 1
+  name: rke2-down-c
+  namespace: fleet-default
+spec:
+  enableNetworkPolicy: false
+  kubernetesVersion: v1.36.4+rke2r1
+  localClusterAuthEndpoint: {}
+  rkeConfig:
+    chartValues: null
+    dataDirectories: {}
+    machineGlobalConfig: null
+    machinePoolDefaults: {}
+    upgradeStrategy:
+      controlPlaneDrainOptions:
+        deleteEmptyDirData: false
+        disableEviction: false
+        enabled: false
+        force: false
+        gracePeriod: 0
+        skipWaitForDeleteTimeoutSeconds: 0
+        timeout: 0
+      workerDrainOptions:
+        deleteEmptyDirData: false
+        disableEviction: false
+        enabled: false
+        force: false
+        gracePeriod: 0
+        skipWaitForDeleteTimeoutSeconds: 0
+        timeout: 0
