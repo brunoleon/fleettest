@@ -4,6 +4,7 @@ metadata:
   annotations:
     field.cattle.io/creatorId: user-crkpx
     provisioning.cattle.io/management-cluster-display-name: rke2-down-c
+    app.kubernetes.io/managed-by: helm
   finalizers:
   - wrangler.cattle.io/cloud-config-secret-remover
   - auth.cattle.io/capi-resources-cleanup
