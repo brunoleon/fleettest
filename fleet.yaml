@@ -1,2 +1,3 @@
 # fleet.yaml
-takeOwnership: true
+helm:
+  takeOwnership: true
