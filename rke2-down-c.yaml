@@ -3,31 +3,15 @@ kind: Cluster
 metadata:
   annotations:
     field.cattle.io/creatorId: user-crkpx
-    meta.helm.sh/release-name: clusters
-    meta.helm.sh/release-namespace: default
     provisioning.cattle.io/management-cluster-display-name: rke2-down-c
-  creationTimestamp: "2026-09-24T12:57:56Z"
-  finalizers:
-  - wrangler.cattle.io/cloud-config-secret-remover
-  - auth.cattle.io/capi-resources-cleanup
-  - wrangler.cattle.io/provisioning-cluster-remove
-  - wrangler.cattle.io/rke-cluster-remove
-  generation: 1
-  labels:
-    app.kubernetes.io/managed-by: Helm
   name: rke2-down-c
   namespace: fleet-default
-  resourceVersion: "9873943"
-  uid: af189387-3226-4126-8a15-92b8f1d4958f
 spec:
   enableNetworkPolicy: false
-  kubernetesVersion: v1.36.4+rke2r1
-  localClusterAuthEndpoint: {}
+  kubernetesVersion: v1.36.2+rke2r1
   rkeConfig:
     chartValues: null
-    dataDirectories: {}
     machineGlobalConfig: null
-    machinePoolDefaults: {}
     upgradeStrategy:
       controlPlaneDrainOptions:
         deleteEmptyDirData: false
@@ -45,41 +29,3 @@ spec:
         gracePeriod: 0
         skipWaitForDeleteTimeoutSeconds: 0
         timeout: 0
-status:
-  agentDeployed: true
-  clientSecretName: rke2-down-c-kubeconfig
-  clusterName: c-m-bz6h79x9
-  conditions:
-  - lastUpdateTime: "2026-09-24T13:02:59Z"
-    status: "False"
-    type: Reconciling
-  - lastUpdateTime: "2026-09-24T12:57:56Z"
-    status: "False"
-    type: Stalled
-  - lastUpdateTime: "2026-09-24T13:02:59Z"
-    status: "True"
-    type: Created
-  - lastUpdateTime: "2026-09-26T08:32:36Z"
-    status: "True"
-    type: RKECluster
-  - lastUpdateTime: "2026-09-26T08:32:36Z"
-    message: 'configuring bootstrap node(s) custom-cc9f389a9395: ConnectionDown, waiting
-      for cluster agent to connect'
-    reason: Waiting
-    status: Unknown
-    type: Updated
-  - lastUpdateTime: "2026-09-26T08:32:36Z"
-    message: 'configuring bootstrap node(s) custom-cc9f389a9395: ConnectionDown, waiting
-      for cluster agent to connect'
-    reason: Waiting
-    status: Unknown
-    type: Provisioned
-  - lastUpdateTime: "2026-09-26T08:32:36Z"
-    message: 'configuring bootstrap node(s) custom-cc9f389a9395: ConnectionDown, waiting
-      for cluster agent to connect'
-    reason: Waiting
-    status: Unknown
-    type: Ready
-  fleetWorkspaceName: fleet-default
-  observedGeneration: 1
-  ready: true
